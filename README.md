@@ -1,43 +1,47 @@
-# PhyData-Launcher
+Understood. Let's create a `README.md` for the `Mt5Csv-StatVis` project based on the format you provided, but tailored to the specifics of this project.
+
+# Mt5Csv-StatVis
 Status: Alpha (do not use)
 
 ## Planner...
-The plan is to create agents with two models, optimized for thinking, coding, planning, GUI interaction, etc. The launcher will pre-configure GUI-based agents for planning and getting on with tasks involving interaction with applications, code, and research. The goal is to find the best configuration for the current models fitting within a dynamic number of layers to GPU, with the rest on system RAM.
+The plan is to create a tool for visualizing and analyzing statistical information from CSV files exported from MetaTrader 5. The tool will include features for calculating SMMA and MACD indicators, plotting data, and providing a WebUI for interaction.
 
 ### Work Done:
-- Made the launcher to install the requirements following the information available from multiple sources. The launcher also enables configuration of launch commands and relevant paths, with persistence.
+- Created the launcher script (`run_main.sh`) to install requirements and manage persistent settings.
+- Developed the main Python script (`main_script.py`) to load and process data.
+- Implemented utility functions in `utility.py` for data processing and visualization.
+- Created a WebUI using Flask in `interface.py` for user interaction.
 
 ### Work Remaining:
-- The main program requires specific functions/scripts to be modified, possibly with new ones added, to work with the best solution for local models through built-in llama-cpp-python. Find relevant files and figure out.
-- When relevant files are figured out, modify those files, delete all other files in the fork to clean up, and make them into drop-in files for PhiData.
-- Nemotron GGUF without matrix supposedly works on AMD GPU. If not, revert to possibly one model through Llama 3.2. Otherwise, decide to go for another model. This would have to be figured out for optimally 64GB system RAM + 8GB GPU, possibly multiple smaller DeepSeek 2.5 models?
-- Data visualization would be nice.
+- Enhance the data processing and visualization capabilities.
+- Implement additional statistical indicators and analysis tools.
+- Improve the WebUI for better user experience and functionality.
+- Ensure compatibility with various CSV formats exported from MetaTrader 5.
 
 ## Details:
-- It's a launcher for PhiData, and maybe some additional files. The plan is to get `Llama 3.1 70B NemoTron` and `Llama-3.1-Unhinged-Vision-8B-GGUF` working on PhiData, then try to make a drop-in mod for that and convenience.
+- `Mt5Csv-StatVis` is a tool designed to visualize and analyze statistical data from CSV files exported from MetaTrader 5.
+- The tool includes features for calculating SMMA and MACD indicators, plotting data, and providing a WebUI for interaction.
 
 ### Preview:
 - Main Menu is like...
 ```
 ================================================================================
-    PhiData-Launch
+    Mt5Csv-StatVis
 ================================================================================
 
-    1) Install PhiData Requirements
-    2) Configure Arguments and Settings
-    3) Configure Models Used
-    4) Run PhiData Now
+    1) Install Requirements
+    2) Configure Settings
+    3) Run Mt5Csv-StatVis
 
 --------------------------------------------------------------------------------
 
-    VENV Location:
-/media/mastar/Progs-Linux_250/Programs-External/PhiData/phidata-2.5.21/phidata-venv
-    Models Used:
-Llama-3.1-Nemotron-70B-Instruct-HF.Q4_K_M.gguf
-Llama-3.1-Unhinged-Vision-8B-q8_0.gguf
+    Data Directory:
+./data
+    Persistent Settings:
+./data/persistence.json
 
 ================================================================================
-Selection; Menu Options 1-4, Exit Program = X: 
+Selection; Menu Options 1-3, Exit Program = X: 
 ```
 
 - Install Option...
@@ -51,47 +55,57 @@ Checking Python 3...
 Checking pip...
 ✓ pip installed and verified
 --------------------------------------------------------------------------------
-Checking python3-venv...
-✓ python3-venv installed and verified
---------------------------------------------------------------------------------
-Checking git...
-✓ git installed and verified
---------------------------------------------------------------------------------
-Setting up PhiData virtual environment...
-✓ Virtual environment created at /media/mastar/Progs-Linux_250/Programs-External/phidata-venv
+Setting up virtual environment...
+✓ Virtual environment created at ./data/venv
 
 ...
 
-✓ PhiData and dependencies installed successfully!
+✓ Requirements installed successfully!
 ================================================================================
 ```
 
-- Model Selection...
+- Configuration Option...
 ```
 ================================================================================
-    Model Configuration Menu
+    Configuration Menu
 ================================================================================
 
-    1) Set Instruct Model Path
-    2) Set Visual Model Path
+    1) Set Data File Path
+    2) Set Strategy Timeframe
+    3) Set SMMA Period
+    4) Set MACD Fast Period
+    5) Set MACD Slow Period
+    6) Set MACD Signal Period
+    7) Enable/Disable Display
 
 --------------------------------------------------------------------------------
 
-    Instruct Model:
-Llama-3.1-Nemotron-70B-Instruct-HF.Q4_K_M.gguf
-
-    Visual Model:
-Llama-3.1-Unhinged-Vision-8B-q8_0.gguf
+    Data File Path:
+./data/exported_data.csv
+    Strategy Timeframe:
+M15_TIME
+    SMMA Period:
+100
+    MACD Fast Period:
+12
+    MACD Slow Period:
+26
+    MACD Signal Period:
+9
+    Enable Display:
+False
 
 ================================================================================
-Selection; Menu Options = 1-2, Back to Main = B: 
+Selection; Menu Options = 1-7, Back to Main = B: 
 ```
 
 ## Links:
-- [PhiData on GitHub](https://github.com/phidatahq/phidata)
-- [PhiData on local models](https://www.youtube.com/watch?v=T_P5wiJXkwk&pp)
-- [PhiData](https://www.youtube.com/watch?v=d-Kh0SvgB6k&pp)
+- [Mt5Csv-StatVis on GitHub](https://github.com/yourusername/Mt5Csv-StatVis)
+- [MetaTrader 5](https://www.metatrader5.com/)
+- [Flask Documentation](https://flask.palletsprojects.com/)
+- [Pandas Documentation](https://pandas.pydata.org/pandas-docs/stable/)
+- [Matplotlib Documentation](https://matplotlib.org/stable/contents.html)
 
 ---
 
-This README provides an overview of the PhyData-Launcher project, including its current status, planned features, and a preview of the user interface. It also includes links to relevant resources for further information.
+This README provides an overview of the `Mt5Csv-StatVis` project, including its current status, planned features, and a preview of the user interface. It also includes links to relevant resources for further information.
