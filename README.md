@@ -1,5 +1,3 @@
-Understood. Let's create a `README.md` for the `Mt5Csv-StatVis` project based on the format you provided, but tailored to the specifics of this project.
-
 # Mt5Csv-StatVis
 Status: Alpha (do not use)
 
@@ -106,6 +104,8 @@ Selection; Menu Options = 1-7, Back to Main = B:
 - [Pandas Documentation](https://pandas.pydata.org/pandas-docs/stable/)
 - [Matplotlib Documentation](https://matplotlib.org/stable/contents.html)
 
----
+
+## Notes:
+- Funding: Kofi, Patreon
 
 This README provides an overview of the `Mt5Csv-StatVis` project, including its current status, planned features, and a preview of the user interface. It also includes links to relevant resources for further information.
