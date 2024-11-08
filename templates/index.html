@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Visualization</title>
+</head>
+<body>
+    <h1>Data Visualization</h1>
+    <form action="/calculate_smma" method="post">
+        <button type="submit">Calculate SMMA</button>
+    </form>
+    <form action="/calculate_macd" method="post">
+        <button type="submit">Calculate MACD</button>
+    </form>
+    <form action="/plot_data" method="get">
+        <button type="submit">Plot Data</button>
+    </form>
+    <img id="plot" src="" alt="Plot" style="max-width: 100%;">
+    <script>
+        async function updatePlot() {
+            const response = await fetch('/plot_data');
+            const imageData = await response.text();
+            document.getElementById('plot').src = 'data:image/png;base64,' + imageData;
+        }
+        document.querySelector('form[action="/plot_data"]').addEventListener('submit', function(event) {
+            event.preventDefault();
+            updatePlot();
+        });
+    </script>
+</body>
+</html>
