@@ -4,7 +4,7 @@ Understood. Let's create a `README.md` for the `Mt5Csv-StatVis` project based on
 Status: Alpha (do not use)
 
 ## Planner...
-The plan is to create a tool for visualizing and analyzing statistical information from CSV files exported from MetaTrader 5. The tool will include features for calculating SMMA and MACD indicators, plotting data, and providing a WebUI for interaction.
+The options should be automated to be found through machine learning, adjusting visualization as it figures the best settings to use for the timeframe, the idea is the user specifies the timeframe, and the scripts analyze the data, and it finds and visualizes the patterns. The plan is to create a tool for visualizing and analyzing statistical information from CSV files exported from MetaTrader 5. The tool will include features for calculating SMMA and MACD, plotting data, and providing a WebUI for interaction. The main focus of the python project being visualization of the file>save output on given MetaTrader 5 pairs.
 
 ### Work Done:
 - Created the launcher script (`run_main.sh`) to install requirements and manage persistent settings.
